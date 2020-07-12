@@ -1,0 +1,15 @@
+<div *ngIf="!data.registrationSuccess; else registrationUnsuccess">
+  <h2 mat-dialog-title>Регистрация прошла успешно</h2>
+</div>
+
+<ng-template #registrationUnsuccess>
+  <h2 mat-dialog-title>Пользователь с таким логином уже существует!</h2>
+  <mat-dialog-content>
+    <mat-card>
+      <mat-card-header>
+        <img mat-card-avatar src="{{data.userImage}}">
+        <mat-card-title>{{data.userLogin}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </mat-dialog-content>
+</ng-template>
